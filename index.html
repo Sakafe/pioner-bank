@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="login-area">
     <h1 class="bank-title text-center">Welcome to Pioneer Bank</h1>
     <div class="submit-area">
         <h4>Login</h4>
@@ -19,10 +20,36 @@
         <button id="login" class="btn btn-success">Enter</button>
 
     </div>
+</div>
+<div id="transection-area">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="deposite status">
+                <h5>Deposite</h5>
+                <h2>$00</h2>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="withdraw status">
+                <h5>Withdraw</h5>
+                <h2>$00</h2>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="balance status">
+                <h5>Balance</h5>
+                <h2>$1240</h2>
+            </div>
+        </div>
+    </div>
+</div>
     <script>
         const loginBtn = document.getElementById("login");
         loginBtn.addEventListener('click',function(){
-            console.log("someone click me");
+          const loginArea = document.getElementById("login-area");
+          loginArea.style.display="none";
+          const transectionArea = document.getElementById("transection-area");
+          transectionArea.style.display = "block";
         })
     </script>
 

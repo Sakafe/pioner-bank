@@ -7,3 +7,23 @@ body{
     border-radius: 10px;
     box-shadow: 5px 5px 10px gray;
 }
+#transection-area{
+    display: none;
+}
+.status{
+    margin: 0 20px;
+    color: white;
+    padding: 20px;
+}
+.deposite{
+    background-color: slateblue;
+    border-radius: 10px;
+}
+.withdraw{
+    background-color: salmon;
+    border-radius: 10px;
+}
+.balance{
+    background-color: orange;
+    border-radius: 10px;
+}
