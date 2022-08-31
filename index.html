@@ -75,24 +75,31 @@
         depositeBtn.addEventListener('click',function(){
             const depositeNumber = getInputNumber("depositeAmount");
 
+            if(depositeNumber < 0){
+                alert("Deposite Number can not be negative.")
+            }
+            else{
+                updateSpanText("currentDeposite",depositeNumber);
+                updateSpanText("currentBalance",depositeNumber);
+
+                document.getElementById("depositeAmount").value="";
+             }
+
             // const currentDeposite=document.getElementById("currentDeposite").innerText;
             // const currentDepositeNumber=parseFloat(currentDeposite);
             // const totalDeposite=depositeNumber+currentDepositeNumber;
             // document.getElementById("currentDeposite").innerText=totalDeposite;
             
             
-            updatesspanetext("currentDeposite",depositeNumber);
-            updatesspanetext("currentBalance",depositeNumber);
-
-            document.getElementById("depositeAmount").value="";
+            
         })
          //withdraw button event handler
          const withdrawBtn = document.getElementById("addWithdraw");
          withdrawBtn.addEventListener('click',function(){
             
            const withdrawNumber = getInputNumber("withdrawAmount");
-           updatesspanetext("currentwithdraw",withdrawNumber);
-           updatesspanetext("currentBalance", -1*withdrawNumber);
+           updateSpanText("currentwithdraw",withdrawNumber);
+           updateSpanText("currentBalance", -1*withdrawNumber);
 
            document.getElementById("withdrawAmount").value="";
         
@@ -103,7 +110,7 @@
             return withdrawNumber;
         }
 
-        function updatesspanetext(id,depositeNumber){
+        function updateSpanText(id,depositeNumber){
             const current=document.getElementById(id).innerText;
             const currentNumber=parseFloat(current);
             totalAmount=depositeNumber+currentNumber;
